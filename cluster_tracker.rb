@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby -W
+#!/usr/bin/env ruby
 # == Synopsis
 #   This tool will allow us to track the CPU/RAM usages of all the lsf jobs
 #   related to solid/slx pipelines.
@@ -192,7 +192,7 @@ protected
       @bacct_output = File.open(@simulate).read
     else
       puts "running: #{cmd}" if @verbose
-      @bacct_output = IO.popen("#{cmd}").read
+      IO.popen("#{cmd}") { |io| @bacct_output = io.read }
       raise "Error running: #{cmd}, exitcode: #{$?}" if $? != 0
     end
   end
