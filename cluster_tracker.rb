@@ -12,6 +12,12 @@
 #     Total CPU consumed: 4601894s 76698m 1278h
 #     Total RAM consumed: 1463G
 #
+#     sol-pipe@r44a-40 ~/hgsc/cluster_tracker $ ruby -W0 ./cluster_tracker.rb -i 2008/12/17,2008/12/18 -u sol-pipe
+#     Query interval time: (2008/12/17 / 2008/12/18)
+#     Total # of jobs   : 12
+#     Total CPU consumed: 1591008s 26516m 441h
+#     Total RAM consumed: 40G
+#
 # == Usage
 #   cluster_tracker [options]
 #
