@@ -1,0 +1,38 @@
+== Synopsis
+ This tool will allow us to track the CPU/RAM usages of all the lsf jobs
+ related to solid/slx pipelines.
+
+== Examples
+ To track all the jobs for user sol-pipe between a given interval:
+   $ cluster_tracker -i 2008/12/01,2008/12/31 -u sol-pipe
+   Using bacct file: ./bacct_output.txt
+   Query interval time: (2008/12/17 / 2008/12/18)
+   Total # of jobs   : 686
+   Total CPU consumed: 4601894s 76698m 1278h
+   Total RAM consumed: 1463G
+
+   sol-pipe@r44a-40 ~/hgsc/cluster_tracker $ ruby -W0 ./cluster_tracker.rb -i 2008/12/17,2008/12/18 -u sol-pipe
+   Query interval time: (2008/12/17 / 2008/12/18)
+   Total # of jobs   : 12
+   Total CPU consumed: 1591008s 26516m 441h
+   Total RAM consumed: 40G
+
+== Usage
+ cluster_tracker [options]
+
+ For help use: cluster_tracker -h
+
+== Options
+ -h, --help          Displays help message
+ -v, --version       Display the version, then exit
+ -u, --user <u>      Jobs belonging to this user
+ -V, --verbose       Run in verbose mode
+ -i, --interval <i>  Interval date
+ -s, --simulate <f>  Use this file instead of running the bacct cmd
+
+== Author
+ David Rio Deiros (mailto: deiros@bcm.edu)
+
+== Copyright
+ Copyright (c) 2008 David Rio Deiros. Licensed under the BSD License:
+ http://www.opensource.org/licenses/bsd-license.php
